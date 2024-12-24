@@ -1,0 +1,63 @@
+@import "..\\..\\bootstrap-5.3.3\\scss\\functions";
+
+// Set theme colors
+$light: #ffffff;
+$dark: #000000;
+$primary: #ffffff;
+$secondary: #ffffff;
+$info: #009095;
+$success: #009a5d;
+$warning: #dcca00;
+$danger: #e92500;
+
+// Set custom colors
+$token-bg-base: #f5e7bc;
+
+$token-bg-1: tint-color($token-bg-base, 80%);
+$token-bg-2: tint-color($token-bg-base, 60%);
+$token-bg-3: tint-color($token-bg-base, 40%);
+$token-bg-4: tint-color($token-bg-base, 20%);
+$token-bg-5: $token-bg-base;
+$token-bg-6: shade-color($token-bg-base, 5%);
+$token-bg-7: shade-color($token-bg-base, 10%);
+$token-bg-8: shade-color($token-bg-base, 18%);
+$token-bg-9: shade-color($token-bg-base, 25%);
+
+$token-color-1: #ee3b3b;
+$token-color-2: #f89d00;
+$token-color-3: #1674e7;
+$token-color-4: #565656;
+
+
+// Font import
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+// Set custom sans-serif and monospace font families with fallbacks
+$font-family-sans-serif:
+  // Windows
+  "Roboto Mono",
+  // Safari for OS X and iOS (San Francisco)
+  -apple-system,
+  // Chrome < 56 for OS X (San Francisco)
+  BlinkMacSystemFont,
+  // Android
+  "Roboto",
+  // Basic web fallback
+  "Helvetica Neue",
+  Arial, monospace,
+  // Emoji fonts
+  "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol" !default;
+
+$font-family-monospace:
+  "Roboto Mono",
+  // Basic web fallback
+  SFMono-Regular, Menlo,
+  Monaco, Consolas, 
+  "Liberation Mono",
+  "Courier New",
+  monospace
+  // Emoji fonts
+  "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol" !default; 

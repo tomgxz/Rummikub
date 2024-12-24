@@ -1,0 +1,83 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    
+    .page-content {
+        width: inherit;
+        height: inherit;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+
+        .game-canvas-wrapper {
+            display: flex;
+            grid-column-gap: .5rem;
+        }
+    }
+}
+
+.game-token {
+    width: 8rem;
+    height: 12rem;
+    background-color: $token-bg-base;
+
+    // bevel effect
+    $box-shadow-inset: 0.5rem;
+    box-shadow: inset $box-shadow-inset $box-shadow-inset 0 0 $token-bg-3, inset $box-shadow-inset*-1 $box-shadow-inset*-1 0 0 $token-bg-6;
+
+    position: relative;
+
+    &::after {
+        content: attr(token-value);
+        position: absolute;
+        inset: 1rem 10%;
+        width: 80%;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+
+        background-color: $token-bg-6;
+        box-shadow: inset -.5rem -.5rem 1rem -1rem $token-bg-7;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 3.5rem;
+        font-weight: bold;
+        white-space: nowrap;
+    }
+
+    // Set joker icon
+    &[token-value="j"]::after {
+        content: "\f118"; // Font Awesome Icon: fa-sharp fa-regular fa-face-smile
+        font-family: "Font Awesome 6 Sharp";
+        font-weight: 400;
+        font-style: normal;
+        font-size: 4rem;
+    }
+
+    // Set token color
+    &[token-color="1"] { color: $token-color-1;}
+    &[token-color="2"] { color: $token-color-2;}
+    &[token-color="3"] { color: $token-color-3;}
+    &[token-color="4"] { color: $token-color-4;}
+
+    // Set token text
+    &::before {
+        content: "Rummikub";
+        position: absolute;
+        bottom: 1rem;
+        width: 100%;
+        height: fit-content;
+
+        text-align: center;
+        font-family: "Charm", cursive;
+        font-size: 1rem;
+        color: transparent;
+
+        text-shadow: 0px 0px 1px $token-bg-base, 0px 0px $token-bg-9;
+    }
+}
