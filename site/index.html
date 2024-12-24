@@ -46,14 +46,23 @@
 
 <div class="page-content">
 
-    <div class="game-canvas-wrapper">
-        <div class="game-token" token-color="1" token-value="1"></div>
-        <div class="game-token" token-color="2" token-value="2"></div>
-        <div class="game-token" token-color="3" token-value="j"></div>
-        <div class="game-token" token-color="4" token-value="11"></div>
+    <div class="game-board-wrapper">
+        <div class="game-board">
+            <div class="game-board-row">
+                <div class="game-board-cell"></div>
+                <div class="game-board-separator"></div>
+                <div class="game-board-cell"></div>
+                <div class="game-board-separator separate" title="Separate Tiles"></div>
+                <div class="game-board-cell"></div>
+                <div class="game-board-separator visible" title="Drop Tile Here"></div>
+                <div class="game-board-cell"></div>
+            </div>
+        </div>
+        
     </div>
 </div>
 
+<div id="dragging_token_wrapper"></div>
 
 <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="./static/js/index.js"></script>
