@@ -14,25 +14,38 @@ body {
     .page-content {
         width: inherit;
         height: inherit;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-
-        .game-canvas-wrapper {
+        
+        .game-wrapper {
+            width: 100%;
+            height: 100%;
+            padding: 1rem;
             display: flex;
-            grid-column-gap: .5rem;
+            flex-direction: column;
+            row-gap: 4rem;
+
+            .game-deck-wrapper {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                column-gap: 2rem;
+            }
+
+            .game-board {
+                width: 100%;
+
+            }
         }
     }
 }
 
 .game-token {
-    width: 8rem;
-    height: 12rem;
+    width: 6rem;
+    height: 9rem;
     background-color: $token-bg-base;
 
     // bevel effect
-    $box-shadow-inset: 0.5rem;
+    $box-shadow-inset: 0.35rem;
     box-shadow: inset $box-shadow-inset $box-shadow-inset 0 0 $token-bg-3, inset $box-shadow-inset*-1 $box-shadow-inset*-1 0 0 $token-bg-6;
 
     position: relative;
@@ -56,7 +69,7 @@ body {
         align-items: center;
         justify-content: center;
 
-        font-size: 3.5rem;
+        font-size: 2.5rem;
         font-weight: bold;
         white-space: nowrap;
     }
@@ -67,7 +80,7 @@ body {
         font-family: "Font Awesome 6 Sharp";
         font-weight: 400;
         font-style: normal;
-        font-size: 4rem;
+        font-size: 3rem;
     }
 
     // Set token color
@@ -95,15 +108,15 @@ body {
 
 .game-board-row {
     width: 100%;
-    height: 12rem;
+    height: 9rem;
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
 
-.game-board-cell {
-    width: 8rem;
-    height: 12rem;
+.game-board-cell, .game-deck-cell {
+    width: 6rem;
+    height: 9rem;
 
     &:not(:has(.game-token)) {
         background-color: $gray-100;
@@ -124,8 +137,10 @@ body {
         background-color: var(--bs-success); opacity: .5;
     }
 
-    &.separate::after {
-        background-color: var(--bs-blue); opacity: .5;
+    &.separate {
+        cursor: pointer;
+        
+        &::after {background-color: var(--bs-blue); opacity: .5;}
     }
 
     &.hover::after {
@@ -137,11 +152,26 @@ body {
         display: block;
 
         width: .5rem;
-        height: 10rem;
+        height: 8rem;
         border-radius: 1rem;
         overflow: hidden;
         transition: opacity 150ms ease-in-out;
+
+        opacity: 0;
+        background-color: transparent;
     }
+}
+
+.game-deck {
+    padding: .75rem;
+    display: flex;
+    column-gap: 1rem;
+    background-color: $gray-800;
+    border-radius: 1.75rem;
+}
+
+.game-deck-cell:not(:has(.game-token)) {
+    background-color: $gray-700;
 }
 
 #dragging_token_wrapper {
