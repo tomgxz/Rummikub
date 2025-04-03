@@ -1,6 +1,5 @@
-*/static/css/*
-*/static/bootstrap-*/*
-!*/static/bootstrap-*/instructions.md
+*/static/css
+*/static/bootstrap
 
 # General
 .DS_Store
